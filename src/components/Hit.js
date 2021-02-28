@@ -1,8 +1,11 @@
+import React, { useState } from 'react';
+import moment from 'moment';
 import Moment from 'react-moment';
 import Image from './Image';
 
 
 const Hit = ({ hit }) => {
+  const [currentUnixDate] = useState(moment().unix());
 
   const nameToColor = (str) => {
     return str.replace(/[^A-Z0-9]+/ig, '-').toLowerCase();
@@ -18,9 +21,6 @@ const Hit = ({ hit }) => {
       return
     }
   }
-
-  // TODO: figure out unix timestamp details to compare
-  // console.log(moment(hit.date_end).unix(), moment().unix())
 
   return (
     <>
@@ -38,6 +38,12 @@ const Hit = ({ hit }) => {
             >{hit.title}</a></h3>
           { (hit.resource_type === `Webinar`) && (
             <>
+              {(hit.date_end < currentUnixDate) && (
+                <span style={{
+                  color: `#4088CC`,
+                  fontWeight: `bold`
+                }}>Recorded on </span>
+              )}
               <Moment
                 format="MMMM DD, YYYY"
                 date={hit.date_end}
@@ -48,8 +54,6 @@ const Hit = ({ hit }) => {
                 }}
               />
             </>
-
-
           )}
           { (hit.resource_type === `Trade Show`) &&
             <div
@@ -74,7 +78,6 @@ const Hit = ({ hit }) => {
               />
             </div>
           }
-
           { hit.sub_title &&
             <p
               dangerouslySetInnerHTML={{
@@ -93,6 +96,5 @@ const Hit = ({ hit }) => {
     </>
   )
 };
-
 
 export default Hit;
