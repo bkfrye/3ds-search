@@ -5,7 +5,10 @@
 .ais-Hits-list {
   margin: 2em 0;
   padding: 0;
+}
 
+
+.ais-Hits-item {
   .ais-Hits-item {
     border-bottom: 1px solid #707070;
     display: flex;
@@ -16,46 +19,44 @@
     @media screen and (min-width: 90.0625em) {
       max-width: 84.375rem;
     }
-  }
 
-  .featured {
+    .featured {
 
-    .content {
-      position: relative;
-      width: 100%;
-    }
-
-    img {
-      min-width: 100%;
-      width: 100%;
-    }
-
-    footer {
-      background-color: #000000;
-      bottom: 0;
-      left: 0;
-      padding: 2rem 4rem 4rem;
-      position: absolute;
-      right: 0;
-      width: 100%;
-
-      h3, p {
-        color: #ffffff;
+      .content {
+        position: relative;
+        width: 100%;
       }
 
-      .resource-type {
-        color: #409ACC;
-        font-family: "Good Pro";
-        font-size: 29px;
-        margin: 0;
+      img {
+        min-width: 100%;
+        width: 100%;
       }
+
+      footer {
+        background-color: #000000;
+        bottom: 0;
+        left: 0;
+        padding: 2rem 4rem 4rem;
+        position: absolute;
+        right: 0;
+        width: 100%;
+
+        h3, p {
+          color: #ffffff;
+        }
+
+        .resource-type {
+          color: #409ACC;
+          font-family: "Good Pro";
+          font-size: 29px;
+          margin: 0;
+        }
+      }
+
     }
-
   }
-}
 
 
-.ais-Hits-item {
   .results-list-item-image {
     width: 23.5%;
 
