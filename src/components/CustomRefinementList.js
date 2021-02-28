@@ -1,3 +1,4 @@
+import React from 'react';
 import {
   connectRefinementList,
 } from 'react-instantsearch-dom';
