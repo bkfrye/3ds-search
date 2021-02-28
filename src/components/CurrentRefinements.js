@@ -23,7 +23,6 @@ const CurrentRefinements = ({ items, refine }) => {
                   <span
                     key={nested.label}
                     className={`ais-CurrentRefinements-category ${nameToColor(nested.label)}`}
-
                   >
                     <span className="ais-CurrentRefinements-categoryLabel">{nested.label}</span>
                     <div
