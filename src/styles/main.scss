@@ -1,0 +1,136 @@
+.resource-finder {
+  margin: 0 auto;
+  max-width: 62.5rem;
+  width: 100%;
+  @media screen and (min-width: 90.0625em) {
+    max-width: 84.375rem;
+  }
+
+  // override default button and input styles from threeds
+  input[type="search"] {
+    background-color: #323232;
+    color: #ffffff;
+    margin-bottom: 0;
+  }
+
+  button,
+  button:focus {
+    appearance: none;
+    background-color: transparent;
+    border-radius: 0;
+    border-style: solid;
+    border-width: 0;
+    cursor: pointer;
+    margin: 0;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    padding: 0;
+  }
+
+  button.button {
+    background-color: #000000;
+    color: #ffffff;
+    height: 40px;
+    padding: 0.3rem 1rem;
+  }
+}
+
+.resource-finder-header {
+  align-items: center;
+  display: flex;
+  margin: 4rem 0 2rem;
+
+  .refinements {
+    display: inline-block;
+  }
+
+  .resource-finder-header-title {
+    h2 {
+      margin: 0;
+      padding-top: 16px;
+    }
+
+  }
+  .refinements {
+    margin: 1rem 0 0 1rem;
+  }
+}
+
+
+
+// Results list items
+
+.ais-Hits-list {
+  padding: 0;
+
+  .ais-Hits-item {
+    border-bottom: 1px solid #363636;
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    padding: 1em 1em 2em 0;
+  }
+}
+
+.results-list-item-content {
+  display: flex;
+  flex-direction: column;
+  width: 74.5%;
+
+  .item-content-main {
+    flex: 1;
+
+    h3 {
+      font-size: 29px;
+
+      a {
+        color: #363636;
+      }
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 0;
+    }
+  }
+
+  .list-item-industry-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 2em 0 0;
+
+    li {
+      color: white;
+      font-size: 14px;
+      list-style-type: none;
+      margin: 1em 1em 0 0;
+      padding: 4px 8px;
+      white-space: nowrap;
+
+      &:nth-last-child(2) {
+        position: relative;
+        margin-right: 3em;
+      }
+
+      &:nth-last-child(2):after {
+        background-color: #707070;
+        content: '';
+        height: 40px;
+        position: absolute;
+        right: -1.5em;
+        top: -7px;
+        width: 2px;
+      }
+    }
+
+    .resource-type {
+      background-color: #696969;
+    }
+  }
+}
+
+
+
+
+

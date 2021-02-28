@@ -1,0 +1,150 @@
+//
+// Result items
+//
+
+.results-list {
+  margin: 2em 0;
+  padding: 0;
+
+  .results-list-item {
+    border-bottom: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    padding: 1em 1em 2em 0;
+  }
+
+  .featured {
+
+    .content {
+      position: relative;
+      width: 100%;
+    }
+
+    img {
+      min-width: 100%;
+      width: 100%;
+    }
+
+    footer {
+      background-color: #000000;
+      bottom: 0;
+      left: 0;
+      padding: 2rem 4rem 4rem;
+      position: absolute;
+      right: 0;
+      width: 100%;
+
+      h3, p {
+        color: #ffffff;
+      }
+
+      .resource-type {
+        color: #409ACC;
+        font-family: "Good Pro";
+        font-size: 29px;
+        margin: 0;
+      }
+    }
+
+  }
+}
+
+
+.ais-Hits-item {
+  .results-list-item-image {
+    width: 23.5%;
+
+    .results-list-item-image-bg {
+      overflow: hidden;
+      position: relative;
+
+      &:hover {
+        &:before {
+          background-color: rgba(0, 0, 0, 0);
+        }
+        img {
+          transform: scale3d(1.08, 1.08, 1);
+        }
+      }
+
+      &:before {
+        background-color: rgba(0, 0, 0, 0.10);
+        bottom: 0;
+        content: '';
+        left: 0;
+        height: 100%;
+        position: absolute;
+        right: 0;
+        top: 0;
+        transition: all 220ms ease-in-out;
+        width: 100%;
+        z-index: 1;
+      }
+
+      img {
+        transform-origin: top left;
+        transition: all 220ms ease-in-out;
+        will-change: transform;
+      }
+    }
+  }
+
+  .results-list-item-content {
+    display: flex;
+    flex-direction: column;
+    width: 74.5%;
+
+    .item-content-main {
+      flex: 1;
+
+      h3 {
+        font-size: 29px;
+
+        a {
+          color: #363636;
+        }
+      }
+
+      p {
+        font-size: 18px;
+        margin-bottom: 0;
+      }
+    }
+
+    .list-item-industry-list {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 2em 0 0;
+      padding: 0;
+
+      li {
+        color: white;
+        font-size: 14px;
+        list-style-type: none;
+        margin: 1em 1em 0 0;
+        padding: 4px 8px;
+        white-space: nowrap;
+
+        &:nth-last-child(2) {
+          position: relative;
+          margin-right: 3em;
+        }
+
+        &:nth-last-child(2):after {
+          background-color: #707070;
+          content: '';
+          height: 40px;
+          position: absolute;
+          right: -1.5em;
+          top: -7px;
+          width: 2px;
+        }
+      }
+
+      .resource-type {
+        background-color: #696969;
+      }
+    }
+  }
+}

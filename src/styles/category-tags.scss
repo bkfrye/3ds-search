@@ -1,0 +1,156 @@
+
+.ais-CurrentRefinements-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+
+  .ais-CurrentRefinements-item {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    margin: 0;
+    padding-bottom: 0.25rem;
+    position: relative;
+
+    &:first-child:before {
+      display: none;
+    }
+
+    &.industry {
+      order: 1;
+    }
+
+    &.sub_industry {
+      order: 2;
+    }
+
+    &.resource_type {
+      order: 3;
+    }
+  }
+
+  .ais-CurrentRefinements-category {
+    color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    height: 30px;
+    margin: 0 1rem 0 0;
+    position: relative;
+
+    .ais-CurrentRefinements-categoryLabel,
+    .ais-CurrentRefinements-delete {
+      font-size: 0.8rem;
+      white-space: nowrap;
+
+    }
+
+    .ais-CurrentRefinements-categoryLabel {
+      cursor: default;
+      font-family: 'Good Pro';
+      padding: 0.4rem 0.5rem 0.3rem;
+    }
+
+    .ais-CurrentRefinements-label {
+      display: none;
+    }
+
+    .ais-CurrentRefinements-delete {
+      background-color: rgba(255, 255, 255, 0.10);
+      color: #ffffff;
+      cursor: pointer;
+      display: flex;
+      line-height: 30px;
+      padding: 8px 6px;
+      transition: all 220ms ease-in-out;
+      right: 0.5rem;
+      width: 30px;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.20);
+      }
+    }
+
+    &.academic-research {
+      background-color: #02C76D;
+    }
+    &.aerospace-defense {
+      background-color: #4088CC;
+    }
+    &.manufacturing-prototyping {
+      background-color: #33B17A;
+    }
+    &.dental {
+      background-color: #409ACC;
+    }
+    &.healthcare {
+      background-color: #34B29C;
+    }
+    &.transportation-motorsports {
+      background-color: #309CA3;
+    }
+  }
+}
+
+// fallback to ensure tag always has background color
+.ais-CurrentRefinements-category {
+  background-color: #696969;
+}
+
+.ais-Hits .list-item-industry-list {
+
+  .academic-research {
+    background-color: #02C76D;
+  }
+  .aerospace-defense {
+    background-color: #4088CC;
+  }
+  .manufacturing-prototyping {
+    background-color: #33B17A;
+  }
+  .dental {
+    background-color: #409ACC;
+  }
+  .healthcare {
+    background-color: #34B29C;
+  }
+  .transportation-motorsports {
+    background-color: #309CA3;
+  }
+}
+
+.ais-CurrentRefinements-category {
+  &.military-aviation,
+  &.commerical-aviation,
+  &.defense,
+  &.space-uav {
+    background-color: #4088CC;
+  }
+  &.dental-clinics,
+  &.dental-equipment-manufacturers,
+  &.dental-labs,
+  &.dental-schools {
+    background-color: #409ACC;
+  }
+  &.medical-device-manufacturers,
+  &.medical-contract-manufacturers,
+  &.hospital-or-medical-clinic,
+  &.medical-schools {
+    background-color: #34B29C;
+  }
+  &.-d-printing-service-bureaus, // removed number because classes do not support numbers well
+  &.foundries,
+  &.high-tech,
+  &.semiconductor,
+  &.energy-turbines,
+  &.jewelry,
+  &.consumer-durable-goods {
+    background-color: #33B17A;
+  }
+  &.automotive,
+  &.public-commercial-transportation,
+  &.motorsports,
+  &.aftermarket-service,
+  &.recreation-marine {
+    background-color: #309CA3;
+  }
+}
