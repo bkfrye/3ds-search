@@ -6,16 +6,16 @@ const Image = ({ src, href }) => {
 
   const [ img, setImg ] = useState(null);
 
-  /* Replaces public:// path with correct URI path */
-  const filterImage = (path) => {
-    const str = path.replace(`public://`, cropImagePath);
-
-    return str.replace(/[ ]+/g, '%20');
-  }
-
   useEffect(() => {
+    /* Replaces public:// path with correct URI path */
+    const filterImage = (path) => {
+      const str = path.replace(`public://`, cropImagePath);
+
+      return str.replace(/[ ]+/g, '%20');
+    }
+
     setImg(filterImage(src))
-  }, [src, setImg])
+  }, [src, setImg, cropImagePath])
 
   return (
     <a
