@@ -24,6 +24,13 @@
   }
 }
 
+h2.mobile-title {
+  display: block;
+  @media screen and (min-width: 62.5em) {
+    display: none;
+  }
+}
+
 .search-footer {
   border-top: 1px solid #696969;
   bottom: 0;
