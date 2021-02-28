@@ -6,10 +6,12 @@ const Header = ({ props }) => {
   const [ isQueryActive, setIsQueryActive ] = useState(0);
 
   useEffect(() => {
-    if ( (props.refinementList.industry && props.refinementList.industry.length) || (props.refinementList.sub_industry && props.refinementList.sub_industry.length) || (props.refinementList.resource_type && props.refinementList.resource_type.length)) {
-      setIsQueryActive(1)
-    } else {
-      setIsQueryActive(0)
+    if (props.refinementList) {
+      if ( (props.refinementList.industry && props.refinementList.industry.length) || (props.refinementList.sub_industry && props.refinementList.sub_industry.length) || (props.refinementList.resource_type && props.refinementList.resource_type.length)) {
+        setIsQueryActive(1)
+      } else {
+        setIsQueryActive(0)
+      }
     }
   }, [props, setIsQueryActive])
 
@@ -33,9 +35,6 @@ const Header = ({ props }) => {
       </div>
     )
   }
-
-
-
 }
 
 export default Header;
