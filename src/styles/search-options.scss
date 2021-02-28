@@ -1,17 +1,147 @@
 
-.results-list-group {
+.mobile-filter-button,
+.mobile-view-results-button {
+  border-radius: 25px;
+  color: #ffffff;
+  cursor: pointer;
+  height: 50px;
+  line-height: 50px;
+  margin: 2rem auto 0;
+  text-align: center;
+  width: 372px;
+}
+
+.mobile-title {
+  font-size: 24px;
+  margin: 1.5rem 0 0;
+}
+.mobile-filter-button {
+  background-color: #000000;
+  font-size: 22px;
+
+  @media screen and (min-width: 62.5em) {
+    display: none;
+  }
+}
+
+.search-footer {
+  border-top: 1px solid #696969;
+  bottom: 0;
+  left: 0;
+  margin: 2rem auto;
+  position: absolute;
+  right: 0;
+  width: 100%;
+  z-index: 5;
+
+  @media screen and (min-width: 62.5em) {
+    display: none;
+  }
+
+  .mobile-view-results-button {
+    background-color: #FF8D1D;
+  }
+}
+
+
+.resource-finder {
+  .search {
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1001;
+
+    @media screen and (min-width: 62.5em) {
+      display: block;
+      position: relative;
+    }
+
+    &.mobile-query-active {
+      display: block;
+
+    }
+  }
+
+  .search-header {
+    align-items: center;
+    background-color: #EEEEEE;
+    display: none;
+    justify-content: space-between;
+    height: 54px;
+    padding: 0 1rem;
+
+    @media screen and (min-width: 62.5em) {
+      display: none;
+    }
+
+    &.mobile-active,
+    &.mobile-query-active {
+      display: flex;
+      @media screen and (min-width: 62.5em) {
+        display: none;
+      }
+    }
+
+
+
+    .close-filters {
+      cursor: pointer;
+    }
+
+    p {
+      font-family: 'Good Pro';
+      margin: 0;
+    }
+
+    .ais-ClearRefinements {
+      .ais-ClearRefinements-button {
+        appearance: none;
+        background-color: transparent;
+        color: #323232;
+
+        &:hover {
+          background-color: transparent;
+        }
+      }
+    }
+  }
+}
+
+
+.search-group {
   background-color: #323232;
-  display: flex;
-  justify-content: space-between;
-  padding: 1em 0.5em;
+  display: none;
+  height: 100%;
+  min-height: calc(100vh - 54px);
+  position: relative;
   width: 100%;
 
-  .ais-SearchBox.searchbox {
-    margin: 0 0.5rem;
-    width: 37.4%;
+  @media screen and (min-width: 62.5em) {
+    display: flex;
+    justify-content: space-between;
+    min-height: 100%;
+    padding: 1em 0.5em;
   }
+
+  &.mobile-active {
+    display: block;
+  }
+
+  .ais-SearchBox.searchbox {
+
+    @media (min-width: 62.5rem) {
+      margin: 0 0.5rem;
+      width: 37.4%;
+    }
+  }
+
   .filter-menu {
-    margin: 0 0.5rem;
+
+    @media (min-width: 62.5rem) {
+      margin: 0 0.5rem;
+    }
 
     &.open {
       .filter-menu-toggle {
@@ -34,11 +164,15 @@
 
   .filter-menu-toggle {
     background-color: #323232;
-    border: 1px solid #c4c8d8;
+    border-bottom: 1px solid #c4c8d8;
     color: #ffffff;
     height: 46px;
     padding: 0.6rem 1rem;
     position: relative;
+
+    @media screen and (min-width: 62.5em) {
+      border: 1px solid #c4c8d8;
+    }
 
     .dropdown-icon {
       align-content: center;
@@ -84,12 +218,16 @@
 
   .ais-SearchBox-input {
     appearance: none;
-    border: 1px solid #c4c8d8;
+    border-bottom: 1px solid #c4c8d8;
     font-size: 16px;
     height: 46px;
     padding: 0.5rem 1rem 0.5rem 2.5rem;
     position: relative;
     width: 100%;
+
+    @media screen and (min-width: 62.5em) {
+      border: 1px solid #c4c8d8;
+    }
 
     &:focus {
       background-color: #323232;
@@ -140,13 +278,17 @@
 
   .filter-menu-items {
     background-color: #696969;
-    left: 0;
-    position: absolute;
-    top: 46px;
     width: 100%;
-    z-index: 5;
+
+    @media (min-width: 62.5rem) {
+      left: 0;
+      position: absolute;
+      top: 46px;
+      z-index: 5;
+    }
 
     .ais-RefinementList-list {
+      border-bottom: 1px solid #c4c8d8;
       margin: 0;
       padding-bottom: 0.5rem;
     }
@@ -154,7 +296,7 @@
     .ais-RefinementList-item {
       list-style-type: none;
       line-height: 16px;
-      height: 39px;
+      height: 100%;
       transition: all 220ms ease-in-out;
       padding: 11px 1em;
 
@@ -194,6 +336,25 @@
 }
 
 @media (min-width: 62.5rem) {
+  #industry-filter {
+    width: 38.8%;
+
+    &.active {
+      width: 18.5%;
+    }
+  }
+
+  .active #industry-filter.open {
+    width: 18.5%;
+  }
+
+  #sub_industry-filter {
+    width: 18.5%;
+  }
+
+  #resource_type-filter {
+    width: 18.5%;
+  }
 
   #industry-filter,
   #sub_industry-filter {
@@ -203,23 +364,5 @@
   }
 }
 
-#industry-filter {
-  width: 38.8%;
 
-  &.active {
-    width: 18.5%;
-  }
-}
-
-.active #industry-filter.open {
-  width: 18.5%;
-}
-
-#sub_industry-filter {
-  width: 18.5%;
-}
-
-#resource_type-filter {
-  width: 18.5%;
-}
 

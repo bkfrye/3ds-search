@@ -38,8 +38,12 @@
 
 .resource-finder-header {
   align-items: center;
-  display: flex;
+  display: none;
   margin: 4rem 0 2rem;
+
+  @media screen and (min-width: 62.5em) {
+    display: flex;
+  }
 
   .refinements {
     display: inline-block;

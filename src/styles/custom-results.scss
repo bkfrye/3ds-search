@@ -1,63 +1,63 @@
-//
-// Result items
-//
-
 .ais-Hits-list {
-  margin: 2em 0;
+  margin: 1rem 0;
   padding: 0;
+
+  @media screen and (min-width: 62.5em) {
+    margin: 2rem 0;
+  }
 }
 
-
 .ais-Hits-item {
-  .ais-Hits-item {
-    border-bottom: 1px solid #707070;
+  border-bottom: 1px solid #707070;
+  list-style-type: none;
+  padding: 1rem 1rem 2rem 0;
+
+  @media screen and (min-width: 62.5rem) {
     display: flex;
     justify-content: space-between;
-    list-style-type: none;
-    padding: 1em 1em 2em 0;
+  }
 
-    @media screen and (min-width: 90.0625em) {
-      max-width: 84.375rem;
+  .featured {
+
+    .content {
+      position: relative;
+      width: 100%;
     }
 
-    .featured {
+    img {
+      min-width: 100%;
+      width: 100%;
+    }
 
-      .content {
-        position: relative;
-        width: 100%;
+    footer {
+      background-color: #000000;
+      bottom: 0;
+      left: 0;
+      padding: 2rem 4rem 4rem;
+      position: absolute;
+      right: 0;
+      width: 100%;
+
+      h3, p {
+        color: #ffffff;
       }
 
-      img {
-        min-width: 100%;
-        width: 100%;
-      }
-
-      footer {
-        background-color: #000000;
-        bottom: 0;
-        left: 0;
-        padding: 2rem 4rem 4rem;
-        position: absolute;
-        right: 0;
-        width: 100%;
-
-        h3, p {
-          color: #ffffff;
-        }
-
-        .resource-type {
-          color: #409ACC;
-          font-family: "Good Pro";
-          font-size: 29px;
-          margin: 0;
-        }
+      .resource-type {
+        color: #409ACC;
+        font-family: "Good Pro";
+        font-size: 29px;
+        margin: 0;
       }
     }
   }
 
 
+
   .results-list-item-image {
-    width: 23.5%;
+
+    @media screen and (min-width: 62.5em) {
+      width: 23.5%;
+    }
 
     .results-list-item-image-bg {
       overflow: hidden;
@@ -87,8 +87,10 @@
       }
 
       img {
+        min-width: 100%;
         transform-origin: top left;
         transition: all 220ms ease-in-out;
+        width: 100%;
         will-change: transform;
       }
     }
@@ -97,13 +99,23 @@
   .results-list-item-content {
     display: flex;
     flex-direction: column;
-    width: 74.5%;
+    margin-top: 1rem;
+    width: 100%;
+
+    @media screen and (min-width: 62.5em) {
+      margin-top: 0;
+      width: 74.5%;
+    }
 
     .item-content-main {
       flex: 1;
 
       h3 {
-        font-size: 29px;
+        font-size: 24px;
+
+        @media screen and (min-width: 62.5em) {
+          font-size: 29px;
+        }
 
         a {
           color: #363636;
