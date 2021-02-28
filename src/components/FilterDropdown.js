@@ -68,7 +68,12 @@ const FilterDropdown = React.forwardRef((props, ref) => {
         </div>
       </div>
       <div className="filter-menu-items" hidden={!isOpen}>
-        <CustomRefinementList attribute={props.attribute} />
+        <CustomRefinementList
+          attribute={props.attribute}
+          transformItems={items =>
+            items.sort((a, b) => (a.label > b.label) ? 1 : -1)
+          }
+        />
       </div>
     </div>
   )
