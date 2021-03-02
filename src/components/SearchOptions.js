@@ -14,6 +14,7 @@ const CustomStateResults = connectStateResults(StateResults);
 const SearchOptions = ({ props }) => {
 
   const [ isQueryActive, setIsQueryActive ] = useState(0);
+  const [ filterCount, setFilterCount ] = useState(0);
 
   const [isIndustryFilterOpen, setIsIndustryFilterOpen] = useState(0);
   const [isSubIndustryFilterOpen, setIsSubIndustryFilterOpen] = useState(0);
@@ -24,6 +25,19 @@ const SearchOptions = ({ props }) => {
   const [resourceActive, setResourceActive] = useState(0);
 
   const [ isMobileFilterActive, setIsMobileFilterActive ] = useState(0);
+
+
+  useEffect(() => {
+    var industry = 0;
+    var subIndustry = 0;
+    var resourceType = 0;
+    if (props.refinementList) {
+      industry = (props.refinementList.industry && props.refinementList.industry.length > 0) ? props.refinementList.industry.length : 0;
+      subIndustry = (props.refinementList.sub_industry && props.refinementList.sub_industry.length > 0) ? props.refinementList.sub_industry.length : 0;
+      resourceType = (props.refinementList.resource_type && props.refinementList.resource_type.length > 0) ? props.refinementList.resource_type.length : 0;
+      setFilterCount( industry + subIndustry + resourceType )
+    }
+  }, [props.refinementList])
 
   useEffect(() => {
     if (props && props.refinementList) {
@@ -41,7 +55,7 @@ const SearchOptions = ({ props }) => {
         setIsQueryActive(0)
       }
     }
-  }, [props, setIsQueryActive])
+  }, [ props, setIsQueryActive ])
 
   const toggleIndustry = (el) => {
     if ( isIndustryFilterOpen ) {
@@ -105,15 +119,13 @@ const SearchOptions = ({ props }) => {
               </svg>
             }
           </div>
-          <p>Filters <span></span></p>
+          <p>Filters <span className="filter-count">{filterCount}</span></p>
           <ClearRefinements
             translations={{
               reset: 'Reset',
             }}
           />
         </div>
-
-
         <div className={`search-group ${industryActive ? "active" : ""} ${isMobileFilterActive ? "mobile-active" : ""}`}>
           <SearchBox
             className="searchbox"
@@ -127,7 +139,6 @@ const SearchOptions = ({ props }) => {
               active={industryActive}
               toggle={toggleIndustry}
             />
-
           { (industryActive === 1) && (
             <FilterDropdown
               attribute="sub_industry"
@@ -136,21 +147,17 @@ const SearchOptions = ({ props }) => {
               toggle={toggleSubIndustry}
             />
           )}
-
           <FilterDropdown
             attribute="resource_type"
             open={isResourceFilterOpen}
             active={resourceActive}
             toggle={toggleResource}
           />
-
           <div className="search-footer">
             <div
               className="mobile-view-results-button"
               onClick={toggleMobileFiltering}
-            >
-              <span>View Results (<CustomStateResults />)</span>
-            </div>
+            ><span>View Results (<CustomStateResults />)</span></div>
           </div>
         </div>
       </div>

@@ -50,6 +50,13 @@ h2.mobile-title {
   }
 }
 
+.filter-count {
+  background-color: #FF8D1D;
+  color: #ffffff;
+  font-weight: normal;
+  padding: 2px 8px;
+}
+
 
 .resource-finder {
   .search {
@@ -58,7 +65,7 @@ h2.mobile-title {
     right: 0;
     top: 0;
     width: 100%;
-    z-index: 1001;
+    z-index: 99;
 
     @media screen and (min-width: 62.5em) {
       display: block;
@@ -253,7 +260,6 @@ h2.mobile-title {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: 20px;
     z-index: 1;
 
     &:hover {
@@ -262,8 +268,9 @@ h2.mobile-title {
   }
 
   .ais-SearchBox-submit {
-    left: 0.3rem;
+    left: 0.2rem;
     padding: 2px 0.5rem;
+    width: 40px;
   }
 
   .ais-SearchBox-reset {
@@ -366,10 +373,7 @@ h2.mobile-title {
   #industry-filter,
   #sub_industry-filter {
     .filter-menu-items {
-      min-width: 519px;
+      min-width: 506px;
     }
   }
 }
-
-
-

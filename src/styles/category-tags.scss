@@ -54,7 +54,7 @@
     .ais-CurrentRefinements-categoryLabel {
       cursor: default;
       font-family: 'Good Pro';
-      padding: 0.4rem 0.5rem 0.3rem;
+      padding: 0.3rem 0.5rem;
     }
 
     .ais-CurrentRefinements-label {
@@ -103,7 +103,8 @@
   background-color: #696969;
 }
 
-.ais-Hits .list-item-industry-list {
+.ais-Hits .list-item-industry-list,
+.ais-Hits .featured .list-item-industry-list {
 
   .academic-research {
     background-color: #02C76D;

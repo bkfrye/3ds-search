@@ -1,10 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import {
-  Hits,
   Pagination,
   connectStateResults,
 } from 'react-instantsearch-dom';
-import Hit from './Hit';
+import CustomHits from './CustomHits';
 
 
 const CustomResults = connectStateResults(({ searchState, searchResults }) => {
@@ -22,14 +21,11 @@ const CustomResults = connectStateResults(({ searchState, searchResults }) => {
   }, [searchState, setIsQueryActive])
 
   return (
-    <div
-      className="results"
-      style={{ marginTop: !isQueryActive ? `0` : `4rem` }}
-    >
+    <div className={`results ${isQueryActive ? 'active-query' : ''} `}>
       <div className="results-wrapper">
         {searchResults && searchResults.nbHits ? (
           <div>
-            <Hits hitComponent={Hit} />
+            <CustomHits />
             <footer>
               <Pagination showLast={true} />
             </footer>

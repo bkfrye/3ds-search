@@ -25,5 +25,3 @@ const RefinementList = ({ items, currentRefinement, refine }) => (
 
 const CustomRefinementList = connectRefinementList(RefinementList);
 export default CustomRefinementList;
-
-
