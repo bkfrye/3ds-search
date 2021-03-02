@@ -10,8 +10,8 @@ import Helmet from 'react-helmet';
 
 
 const searchClient = algoliasearch(
-  '2K2AJITPNU',
-  '728e5e0d936d5e2cca8761c5cb5eb2c2'
+  'APP_ID',
+  'API_KEY'
 );
 
 const App = (props) => (
